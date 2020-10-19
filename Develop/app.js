@@ -21,37 +21,67 @@ inquirer.prompt([
     },
 
 ])
+
     .then((response) => {
 
-        for (var i = 0; i < response.empType; i++) {
-            if (response.empType === "Manager") {
-                inquirer.prompt([
-                    {
-                        type: "input",
-                        message: "What is the name of the project manager?",
-                        name: "manager-name"
-                    },
-                    {
-                        type: "input",
-                        message: "What office number are they in?",
-                        name: "manager-office"
-                    },
-                    {
-                        type: "input",
-                        message: "What is their email address?",
-                        name: "manager-email"
-                    }
-                ])
-            }
-            else if (response.empType === 1) {
-                console.log("Engineer");
-            }
-            else if (response.empType === 2) {
-                console.log("intern")
-            }
+        if (response.empType === 0) {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    message: "What is the name of the project manager?",
+                    name: "manager-name",
+                },
+                {
+                    type: "input",
+                    message: "What office number are they in?",
+                    name: "manager-office"
+                },
+                {
+                    type: "input",
+                    message: "What is their email address?",
+                    name: "manager-email"
+                }
+            ])
+        }
+        else if (response.empType === 1) {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    message: "What is the name of the engineer?",
+                    name: "engineer-name",
+                },
+                {
+                    type: "input",
+                    message: "What is their GitHub username?",
+                    name: "engineer-github"
+                },
+                {
+                    type: "input",
+                    message: "What is their email address?",
+                    name: "engineer-email"
+                }
+            ])
+        }
+        else if (response.empType === 2) {
+            inquirer.prompt([
+                {
+                    type: "input",
+                    message: "What is the name of the intern?",
+                    name: "intern-name",
+                },
+                {
+                    type: "input",
+                    message: "What school do they go to?",
+                    name: "intern-school"
+                },
+                {
+                    type: "input",
+                    message: "What is their email address?",
+                    name: "intern-email"
+                }
+            ])
         }
     })
-
 
 
 
