@@ -79,33 +79,27 @@ function makeTeam() {
             {
                 type: "input",
                 message: "What is the name of the engineer?",
-                name: "engineer-name",
-                // validate: answer => {
-                //     if (!answer === "" || !answer === )
-                // }
+                name: "engineerName",
             },
             {
                 type: "input",
                 message: "What is the ID of the engineer?",
-                name: "engineer-id",
+                name: "engineerId",
             },
             {
                 type: "input",
                 message: "What is their GitHub username?",
-                name: "engineer-github"
+                name: "engineerGithub"
             },
             {
                 type: "input",
                 message: "What is their email address?",
-                name: "engineer-email"
+                name: "engineerEmail"
             },
-            {
-                type: "list",
-                message: "Would you like to add more team members?",
-                choices: ["Yes", "No"],
-                name: "addMore"
-            }
         ]).then(response => {
+            const engineer = new Engineer(response.engineerName, response.engineerId, response.engineerGithub, response.engineerEmail)
+            teamMembers.push(engineer)
+            idArray.push(response.engineerId)
             employeeType()
         })
     }
@@ -117,30 +111,27 @@ function makeTeam() {
             {
                 type: "input",
                 message: "What is the name of the intern?",
-                name: "intern-name",
+                name: "internName",
             },
             {
                 type: "input",
                 message: "What is the ID of the intern?",
-                name: "intern-id",
+                name: "internId",
             },
             {
                 type: "input",
                 message: "What school do they go to?",
-                name: "intern-school"
+                name: "internSchool"
             },
             {
                 type: "input",
                 message: "What is their email address?",
-                name: "intern-email"
+                name: "internEmail"
             },
-            {
-                type: "list",
-                message: "Would you like to add more team members?",
-                choices: ["Yes", "No"],
-                name: "addMore"
-            }
         ]).then(response => {
+            const intern = new Intern(response.internName, response.internId, response.internSchool, response.internEmail)
+            teamMembers.push(intern)
+            idArray.push(response.internId)
             employeeType()
         })
     }
