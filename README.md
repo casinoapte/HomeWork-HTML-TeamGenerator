@@ -20,7 +20,7 @@
 The goal of this project was to create an HTML page with employee cards based off user input which the user selected in the VSCode terminal. The user was able to select between managers, engineers, and interns. Furthermore they would also be able to select the employees role, school, office number, etc.
 
 ## PROBLEMS:
-Learning and functioning chaining all the creation functions was a little difficult. However, 
+Learning and functioning chaining all the creation functions was a little difficult. However I was able to solve it and got the program working.
 
 ## LICENSE: MIT
 
